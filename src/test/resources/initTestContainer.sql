@@ -1,0 +1,3 @@
+DROP SCHEMA IF EXISTS public;
+DROP SCHEMA IF EXISTS main_schema;
+CREATE SCHEMA main_schema;
