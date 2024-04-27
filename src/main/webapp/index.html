@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Task Manager - Login Page</title>
+  <link rel="stylesheet" href="resources/login.css">
+  <script src="resources/login.js" defer></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body onload="getRoles()">
+<div class="login-page">
+  <div class="form">
+    <form class="register-form">
+      <input id="register_login" type="text" placeholder="Логин"/>
+      <input id="register_pass" type="password" placeholder="Пароль"/>
+      <label for="role-select">Выберите роль:</label>
+      <select name="Role" id="role-select">
+        <option value="">--Ваша роль--</option>
+      </select>
+      <button type="button" onclick="doRegister()">Зарегистрироваться</button>
+      <p>Ужа зарегистрированы? <a class="message" href="javascript:void(0);">Вход</a></p>
+    </form>
+    <form class="login-form">
+      <input id="login_login" type="text" placeholder="Логин"/>
+      <input id="login_pass" type="password" placeholder="Пароль"/>
+      <button type="button" onclick="doLogin()">вход</button>
+      <p>Не зарегистрированы? <a class="message" href="javascript:void(0);">Регистрация</a></p>
+    </form>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+package enums;
+
+public enum Role {
+    OWNER,
+    HEAD_OF_DEPARTMENT,
+    DEPARTMENT,
+    MANAGER,
+    SENIOR_SPECIALIST,
+    MIDDLE_SPECIALIST,
+    JUNIOR_SPECIALIST,
+    ADMINISTRATOR,
+    TRAINEE;
+
+}

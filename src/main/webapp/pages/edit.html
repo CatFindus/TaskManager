@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Manager - Profile</title>
+    <link rel="stylesheet" href="/resources/edit.css">
+    <script src="/resources/edit.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body onload="firstLoad()">
+<div class="profile-page">
+    <h1 align="center">Редактирование задач</h1>
+    <div class="form">
+        <form class="profile-form">
+            <div>
+                <span id="id_left">Id пользователя:</span>
+                <span id="id_right"></span>
+            </div>
+            <div>
+                <label for="task_id">Id задачи:</label>
+                <input id="task_id" class="task_field" type="text" placeholder="Id задачи" disabled/>
+                <label for="task_created_by">Автор задачи:</label>
+                <input id="task_created_by" class="task_field" type="text" placeholder="Автор задачи" disabled/>
+            </div>
+            <div>
+                <label for="task_created">Cоздан:</label>
+                <input id="task_created" class="task_field" type="datetime-local" placeholder="Создан" disabled/>
+                <label for="task_updated">Обновлен:</label>
+                <input id="task_updated" class="task_field" type="datetime-local" placeholder="Изменен" disabled/>
+            </div>
+            <div>
+                <label for="task_title">Название*:</label>
+                <input id="task_title"  class="task_field" type="text" placeholder="Название задачи"/>
+                <label for="task_hours">Количество часов*:</label>
+                <input id="task_hours" class="task_field" type="number" placeholder="Колчичество часов"/>
+            </div>
+            <div>
+                <textarea id="task_description" class="task_field" name="description" cols="50" rows="7" placeholder="Описание"></textarea>
+                <textarea id="task_content" class="task_field" name="description" cols="50" rows="7" placeholder="Содержание"></textarea>
+            </div>
+            <div>
+                <label for="task_status">Статус*:</label>
+                <select name="status" id="task_status">
+                    <option value="0">Выберите Статус</option>
+                </select>
+                <label for="task_tag">Тег*:</label>
+                <select name="tag" id="task_tag">
+                    <option value="0">Выберите статус</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="task_plannedStart">Планируемое начало:</label>
+                <input id="task_plannedStart" class="task_field" type="datetime-local" placeholder="Планируемое начало"/>
+                <label for="task_plannedEnd">Планируемое окончание:</label>
+                <input id="task_plannedEnd" class="task_field" type="datetime-local" placeholder="Планируемый конец"/>
+            </div>
+            <div>
+                <label for="task_actualStart">Фактическое начало:</label>
+                <input id="task_actualStart" class="task_field" type="datetime-local" placeholder="Фактическое начало"/>
+                <label for="task_actualEnd">Фактическией конец:</label>
+                <input id="task_actualEnd" class="task_field" type="datetime-local" placeholder="Фактический конец"/>
+            </div>
+            <div>
+                <button id="edit_save" class="inner task_field" type="button" onclick="doSave()">Сохранить</button>
+                <button id="edit_return" class="inner task_field" type="button">Отмена</button>
+                <button id="edit_comments" class="inner task_field" type="button">Комментарии</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="comment-page">
+    <h1 align="center">Комментарии</h1>
+    <div class="form2">
+            <div>
+                <table id="add_comment_table">
+                    <thead>
+                        <tr>
+                            <th class="new_comment_title_column">Название</th>
+                            <th class="new_comment_content_column">Текст комментария</th>
+                            <th class="new_comment_button_column">---</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="new_comment_title_column">
+                                <input id="new_comment_title" class="element new_comment_title" type="text" placeholder="Название задачи"/>
+                            </td>
+                            <td class="new_comment_title_column">
+                                <input id="new_comment_content" class="element new_comment_content" type="text" placeholder="Название задачи"/>
+                            </td>
+                            <td class="new_comment_title_column">
+                                <button id="add_comment" class="element new_comment_button" type="button">Добавить</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="all_comments">
+                <table id="all_comment_table">
+                    <thead>
+                        <tr>
+                            <th class="comments_id">ID</th>
+                            <th class="comments_created">Дата</th>
+                            <th class="comments_user">Пользователь</th>
+                            <th class="comments_title">Название</th>
+                            <th class="comments_data">Текст</th>
+                        </tr>
+                    </thead>
+                    <tbody id="comment_body">
+                    </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
