@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+<!--    <property name="connection.url">jdbc:p6spy:postgresql://localhost:9797/task_manager</property>-->
+<!--    <property name="connection.driver_class">com.p6spy.engine.spy.P6SpyDriver</property>-->
+    <property name="connection.url">jdbc:postgresql://localhost:9797/task_manager</property>
+    <property name="connection.driver_class">org.postgresql.Driver</property>
+    <property name="connection.username">taskmanager</property>
+    <property name="connection.password">taskmanager</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <mapping class="model.Task"/>
+    <mapping class="model.User"/>
+    <mapping class="model.Tag"/>
+    <mapping class="model.Comment"/>
+  </session-factory>
+</hibernate-configuration>

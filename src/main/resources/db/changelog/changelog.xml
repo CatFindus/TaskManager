@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+        <!-- Здесь мы позже напишем скрипт -->
+<!--        <include file="src/main/resources/db/changelog/init_schema.sql" relativeToChangelogFile="false"/>-->
+        <include file="db/changelog/scripts/create-tags-table.xml" relativeToChangelogFile="false"/>
+        <include file="db/changelog/scripts/create-users-table.xml" relativeToChangelogFile="false"/>
+        <include file="db/changelog/scripts/create-tasks-table.xml" relativeToChangelogFile="false"/>
+        <include file="db/changelog/scripts/create-comments-table.xml" relativeToChangelogFile="false"/>
+        <include file="db/changelog/scripts/create-triggers.sql" relativeToChangelogFile="false"/>
+</databaseChangeLog>

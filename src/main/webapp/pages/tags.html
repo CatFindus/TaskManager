@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Manager - Profile</title>
+    <link rel="stylesheet" href="/resources/tags.css">
+    <script src="/resources/tags.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body onload="firstLoad()">
+<div class="tags-page">
+    <h1 align="center">Редактирование тэгов</h1>
+        <div class="form">
+                <form class="tag-form">
+                    <div>
+                           <span id="id_left">Id пользователя:</span>
+                           <span id="id_right"></span>
+                    </div>
+                    <div id="table_div">
+                        <table id="tag_table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Название</th>
+                                    <th>Цвет</th>
+                                    <th>Действие</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tag_body">
+                                <tr>
+                                    <td> </td>
+                                    <td><input id="tag_title" class="table_text" type="text" placeholder="Название" /></td>
+                                    <td><input id="tag_color" class="table_color" type="color"/></td>
+                                    <td><button id="profile_save" class="table_button" type="button" onclick="addTag()">Добавить</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <button id="tag_return" class="inner navigate" type="button" onclick="window.location='tasks.html'">Назад</button>
+                    </div>
+            </form>
+        </div>
+</div>
+</body>
+</html>

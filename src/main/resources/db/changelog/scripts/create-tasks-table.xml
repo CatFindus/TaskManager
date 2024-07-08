@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet id="create_table_tasks" author="apuchinec">
+        <createTable tableName="tasks">
+            <column autoIncrement="true" name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="user_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_by" type="bigint"/>
+            <column name="title" type="varchar(512)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="varchar(2048)"/>
+            <column name="status" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="hours" type="double">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="timestamp" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" type="timestamp"/>
+            <column name="planned_start" type="timestamp"/>
+            <column name="planned_end" type="timestamp"/>
+            <column name="actual_start" type="timestamp"/>
+            <column name="actual_end" type="timestamp"/>
+            <column name="content" type="text"/>
+            <column name="tag_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="tasks" baseColumnNames="user_id" constraintName="FK_TASKS_USER_ID"
+                                 referencedTableName="users" referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="tasks" baseColumnNames="created_by" constraintName="FK_TASKS_CREATED_BY"
+                                 referencedTableName="users" referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="tasks" baseColumnNames="updated_by" constraintName="FK_TASKS_UPDATED_BY"
+                                 referencedTableName="users" referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="tasks" baseColumnNames="tag_id" constraintName="FK_TASKS_TAG_ID"
+                                 referencedTableName="tags" referencedColumnNames="id"/>
+    </changeSet>
+</databaseChangeLog>

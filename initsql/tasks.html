@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Manager - Tasks</title>
+    <link rel="stylesheet" href="/resources/tasks.css">
+    <script src="/resources/tasks.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body onload="firstLoad()">
+<div class="tasks-page">
+    <h1 align="center">Мои задачи</h1>
+    <div class="form">
+        <form class="profile-form">
+            <div>
+                <span id="id_left">Id пользователя:</span>
+                <span id="id_right"></span>
+            </div>
+            <div class="table_div">
+            <table id="task_table">
+                <thead>
+                    <tr id="task_table_head">
+                        <th class="task_id column">№</th>
+                        <th class="task_title column">Заголовок</th>
+                        <th class="task_status column">Статус</th>
+                        <th class="task_planned_begin column">Планируемое начало</th>
+                        <th class="task_planned_end column">Планируемое окончание</th>
+                        <th class="task_tag">Tег</th>
+                        <th class="task_href column">Подробности</th>
+                    </tr>
+                    <tr>
+                        <td><input id="task_id" class="task_id column input_filter" type="text" placeholder="№"/></td>
+                        <td><input id="task_title" class="task_title column input_filter" type="text" placeholder="Загловок"/></td>
+                        <td>
+                            <select name="status" id="task_status">
+                                <option value=""></option>
+                            </select>
+                        </td>
+                        <td><input id="task_begin" class="task_planned_begin column input_filter" type="datetime-local" placeholder="с"/></td>
+                        <td><input id="task_end" class="task_planned_end column input_filter" type="datetime-local" placeholder="по"/></td>
+                        <td><input id="task_tag" class="task_tag input_filter" type="text" placeholder="Тег"/></td>
+                        <td>
+                            <button class="task_href column button_filter" type="button" onclick="onFilter()">Поиск</button>
+                            <button class="task_href column button_filter" type="button" onclick="offFilter()">Сброс</button>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody id="tablebody">
+
+                </tbody>
+            </table>
+            </div>
+            <div>
+                <span>Навигация:</span>
+            </div>
+            <button id="task_new" class="inner navigate_button" type="button" onclick="window.location.href = 'edit.html'">Новая задача</button>
+            <button id="task_next" class="inner navigate_button" type="button" onclick="prevousPage()">Назад</button>
+            <button id="task_before" class="inner navigate_button" type="button" onclick="nextPage()">Вперед</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  app:
+    hostname: "task-manager"
+    container_name: "task-manager"
+    build: .
+    ports:
+      - "80:8080"
+  postgres:
+    image: postgres:16.2
+    hostname: "db-task-manager"
+    container_name: "db-task-manager"
+    environment:
+      POSTGRES_DB: "task_manager"
+      POSTGRES_USER: "taskmanager"
+      POSTGRES_PASSWORD: "taskmanager"
+    ports:
+      - "9797:5432"
+    volumes:
+      - "d:/pg/task_manager:/var/lib/postgresql/data"
+      - "initsql:/docker-entrypoint-initdb.d/"

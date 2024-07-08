@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Manager - Profile</title>
+    <link rel="stylesheet" href="/resources/profile.css">
+    <script src="/resources/profile.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body onload="doLoad()">
+<div class="profile-page">
+    <h1 align="center">Редактирование профиля</h1>
+        <div class="form">
+                <form class="profile-form">
+                    <div>
+                           <span id="id_left">Id пользователя:</span>
+                           <span id="id_right"></span>
+                    </div>
+                <input id="profile_login" type="text" placeholder="Логин" disabled/>
+                <input id="profile_pass" type="password" placeholder="Пароль"/>
+                <input id="profile_firstName" type="text" placeholder="Имя"/>
+                <input id="profile_middleName" type="text" placeholder="Отчество"/>
+                <input id="profile_lastName" type="text" placeholder="Фамилия"/>
+                <input id="profile_phone" type="text" placeholder="Телефон"/>
+                <div>
+                    <textarea id="profile_intro" name="intro" cols="50" rows="7" placeholder="Вступление"></textarea>
+                    <textarea id="profile_profile" name="profile" cols="50" rows="7" placeholder="Описание"></textarea>
+                </div>
+                <div>
+                    <label for="role-select">Роль:</label>
+                    <select name="Role" id="role-select">
+                        <option value="0">--Сменить роль--</option>
+                    </select>
+                </div>
+                <button id="profile_save" class="inner" type="button" onclick="updateProfile()">Сохранить</button>
+                <button id="profile_return" class="inner" type="button">Отмена</button>
+            </form>
+        </div>
+</div>
+</body>
+</html>
